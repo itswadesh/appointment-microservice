@@ -1,0 +1,30 @@
+<md-dialog aria-label="Mango (Fruit)" ng-cloak flex-lg="25" flex="50" flex-sm="100">
+  <form ng-submit="answer(customer)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Slot: {{customer.slot.date | date:'dd-MMM-yyyy @ h:mma'}} </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          x
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <md-content layout="column" layout-align="start center">
+        <md-input-container>
+          <label>Name</label>
+          <input ng-model="customer.name" required />
+        </md-input-container>
+        <md-input-container>
+          <label>phone no</label>
+          <input ng-model="customer.phone" required />
+        </md-input-container>
+        <md-input-container layout-align="center center">
+        </md-input-container>
+      </md-content>
+      <md-dialog-actions layout="row" layout-align="center center">
+        <md-button type="submit" class="md-raised md-warn">Book Appointment</md-button>
+      </md-dialog-actions>
+    </md-dialog-content>
+  </form>
+</md-dialog>

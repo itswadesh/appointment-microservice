@@ -1,0 +1,47 @@
+{
+  "name": "appointment",
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "@appointment"
+  },
+  "builds": [
+    {
+      "src": "www/**",
+      "use": "@now/static"
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "www/index.html"
+    },
+    {
+      "src": "/app.js",
+      "dest": "www/app.js"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/www/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/www/js/$1"
+    },
+    {
+      "src": "/app/(.*)",
+      "dest": "/www/app/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/www/images/$1"
+    },
+    {
+      "src": "/api",
+      "dest": "api/*"
+    }
+  ]
+}
